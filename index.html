@@ -396,7 +396,7 @@
     }
 
     .avatar {
-      width: 72px; height: 72px;
+      width: 96px; height: 96px;
       border-radius: 50%;
       margin: 0 auto 1rem;
       display: flex;
@@ -407,6 +407,15 @@
       background: linear-gradient(135deg, rgba(0,180,216,.25), rgba(0,180,216,.05));
       border: 2px solid rgba(0,180,216,.3);
       color: var(--teal);
+      overflow: hidden;
+    }
+
+    .avatar img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top center;
+      border-radius: 50%;
     }
 
     .board-card .name { font-size: 1rem; font-weight: 700; margin-bottom: .3rem; }
@@ -562,25 +571,48 @@
       text-align: center;
     }
 
-    .partners-track {
-      display: flex;
-      gap: 2rem;
-      margin-top: 2.5rem;
-      justify-content: center;
-      flex-wrap: wrap;
+    .members-section-label {
+      font-size: .85rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .12em;
+      color: var(--teal);
+      margin: 3rem 0 1.2rem;
     }
 
-    .partner-chip {
-      padding: .6rem 1.4rem;
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 100px;
-      font-size: .9rem;
-      font-weight: 600;
-      opacity: .7;
-      transition: opacity .2s, border-color .2s;
+    .logo-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.2rem;
+      justify-content: center;
     }
-    .partner-chip:hover { opacity: 1; border-color: rgba(0,180,216,.4); }
+
+    .logo-card {
+      background: #fff;
+      border-radius: 14px;
+      padding: .9rem 1.4rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 160px;
+      height: 80px;
+      transition: transform .2s, box-shadow .2s;
+      box-shadow: 0 2px 12px rgba(0,0,0,.18);
+    }
+    .logo-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 28px rgba(0,180,216,.35);
+    }
+    .logo-card img {
+      max-width: 100%;
+      max-height: 52px;
+      object-fit: contain;
+      display: block;
+    }
+
+    .foerdernd-grid .logo-card {
+      width: 180px;
+    }
 
     /* ─── Contact ────────────────────────────────────────────────── */
     #contact {
@@ -687,6 +719,7 @@
       <li><a href="#groups">Arbeitsgruppen</a></li>
       <li><a href="#board">Vorstand</a></li>
       <li><a href="#events">Events</a></li>
+      <li><a href="#partners">Mitglieder</a></li>
       <li><a href="#membership" class="nav-cta">Mitglied werden</a></li>
     </ul>
   </nav>
@@ -711,7 +744,7 @@
     </div>
     <div class="hero-stats">
       <div class="stat-item">
-        <div class="stat-num">20+</div>
+        <div class="stat-num">17+</div>
         <div class="stat-label">Mitglieder</div>
       </div>
       <div class="stat-item">
@@ -835,27 +868,27 @@
 
     <div class="board-grid">
       <div class="board-card">
-        <div class="avatar">BN</div>
+        <div class="avatar"><img src="https://aiupperaustria.com/wp-content/uploads/2023/09/IMG_6781_1-scaled.jpg" alt="Bernhard Niedermayer" /></div>
         <div class="name">Bernhard Niedermayer</div>
         <div class="role">Obmann · Head of AI @ Cloudflight</div>
       </div>
       <div class="board-card">
-        <div class="avatar">MM</div>
+        <div class="avatar"><img src="https://aiupperaustria.com/wp-content/uploads/2025/11/SCCH_Markus_2023_8338_Portrait_753Px.jpg" alt="Markus Manz" /></div>
         <div class="name">Markus Manz</div>
         <div class="role">Obmann-Stellvertreter · CEO SCCH</div>
       </div>
       <div class="board-card">
-        <div class="avatar">GK</div>
+        <div class="avatar"><img src="https://aiupperaustria.com/wp-content/uploads/2023/09/IMG_6790-scaled.jpg" alt="Gerhard Kürner" /></div>
         <div class="name">Gerhard Kürner</div>
         <div class="role">Stellvertreter</div>
       </div>
       <div class="board-card">
-        <div class="avatar">FK</div>
+        <div class="avatar"><img src="https://aiupperaustria.com/wp-content/uploads/2023/09/IMG_6783-scaled.jpg" alt="Franziskos Kyriakopoulos" /></div>
         <div class="name">Franziskos Kyriakopoulos</div>
         <div class="role">Kassier</div>
       </div>
       <div class="board-card">
-        <div class="avatar">DB</div>
+        <div class="avatar"><img src="https://aiupperaustria.com/wp-content/uploads/2023/09/IMG_6786_2-scaled.jpg" alt="David Böhm" /></div>
         <div class="name">David Böhm</div>
         <div class="role">Schriftführer</div>
       </div>
@@ -989,14 +1022,75 @@
 
   <!-- ── Partners ── -->
   <section id="partners" class="reveal">
-    <div class="section-label">Gründungsmitglieder</div>
-    <h2>Starke <span class="accent">Partner</span> an unserer Seite</h2>
-    <div class="partners-track">
-      <div class="partner-chip">Cloudflight</div>
-      <div class="partner-chip">SCCH</div>
-      <div class="partner-chip">7LYTIX</div>
-      <div class="partner-chip">Newsadoo</div>
-      <div class="partner-chip">ReqPool</div>
+    <div class="section-label">Mitglieder</div>
+    <h2>Starke <span class="accent">Mitglieder</span> an unserer Seite</h2>
+
+    <p class="members-section-label">Ordentliche Mitglieder</p>
+    <div class="logo-grid">
+      <div class="logo-card">
+        <img src="https://aiupperaustria.com/wp-content/uploads/2020/12/cloudflight-logo-small.png" alt="Cloudflight" />
+      </div>
+      <div class="logo-card">
+        <img src="https://aiupperaustria.com/wp-content/uploads/2022/02/Keba-logo.svg" alt="KEBA" />
+      </div>
+      <div class="logo-card">
+        <img src="https://aiupperaustria.com/wp-content/uploads/2020/12/Newsadoo_logo.png" alt="Newsadoo" />
+      </div>
+      <div class="logo-card">
+        <img src="https://aiupperaustria.com/wp-content/uploads/2020/12/reqpool_logo.png" alt="reqpool" />
+      </div>
+      <div class="logo-card">
+        <img src="https://aiupperaustria.com/wp-content/uploads/2021/07/SCCH_Logo_Subline_.jpg" alt="SCCH" />
+      </div>
+      <div class="logo-card">
+        <img src="https://aiupperaustria.com/wp-content/uploads/2023/09/506-mit-Slogan_CMYK-3.jpeg" alt="506" />
+      </div>
+      <div class="logo-card">
+        <img src="https://aiupperaustria.com/wp-content/uploads/2021/11/Logo-BMD-Transparent.gif" alt="BMD" />
+      </div>
+      <div class="logo-card">
+        <img src="https://aiupperaustria.com/wp-content/uploads/2024/08/Logo_4c-Schwarz-moweex.png" alt="moweex" />
+      </div>
+      <div class="logo-card">
+        <img src="https://aiupperaustria.com/wp-content/uploads/2024/09/logo_schornai_indigo.svg" alt="schorn.ai" />
+      </div>
+      <div class="logo-card">
+        <img src="https://aiupperaustria.com/wp-content/uploads/2023/09/DataStoryLab.png" alt="DataStoryLab" />
+      </div>
+      <div class="logo-card">
+        <img src="https://aiupperaustria.com/wp-content/uploads/2021/11/Miba-Logo.jpg" alt="Miba" />
+      </div>
+      <div class="logo-card">
+        <img src="https://aiupperaustria.com/wp-content/uploads/2021/11/Logo-RISC.png" alt="RISC" />
+      </div>
+      <div class="logo-card">
+        <img src="https://aiupperaustria.com/wp-content/uploads/2021/11/Logo-TGW.png" alt="TGW" />
+      </div>
+      <div class="logo-card">
+        <img src="https://aiupperaustria.com/wp-content/uploads/2022/02/ubitec-logo.svg" alt="ubitec" />
+      </div>
+      <div class="logo-card">
+        <img src="https://aiupperaustria.com/wp-content/uploads/2022/07/v_Logo_CO.jpg" alt="CO" />
+      </div>
+      <div class="logo-card">
+        <img src="https://aiupperaustria.com/wp-content/uploads/2025/11/TU_Logo_1_pos.png" alt="TU" />
+      </div>
+      <div class="logo-card">
+        <img src="https://aiupperaustria.com/wp-content/uploads/2025/11/Logo-inchstone-font-as-path-small-pading-white-background.svg" alt="inchstone" />
+      </div>
+    </div>
+
+    <p class="members-section-label">Fördernde Mitglieder</p>
+    <div class="logo-grid foerdernd-grid">
+      <div class="logo-card">
+        <img src="https://aiupperaustria.com/wp-content/uploads/2023/09/Netural-Logo.jpg" alt="Netural" />
+      </div>
+      <div class="logo-card">
+        <img src="https://aiupperaustria.com/wp-content/uploads/2023/09/Sparkasse-Logo.png" alt="Sparkasse" />
+      </div>
+      <div class="logo-card">
+        <img src="https://aiupperaustria.com/wp-content/uploads/2023/09/Raiffeisen-Logo.jpg" alt="Raiffeisen" />
+      </div>
     </div>
   </section>
 
