@@ -396,7 +396,7 @@
     }
 
     .avatar {
-      width: 72px; height: 72px;
+      width: 96px; height: 96px;
       border-radius: 50%;
       margin: 0 auto 1rem;
       display: flex;
@@ -407,6 +407,15 @@
       background: linear-gradient(135deg, rgba(0,180,216,.25), rgba(0,180,216,.05));
       border: 2px solid rgba(0,180,216,.3);
       color: var(--teal);
+      overflow: hidden;
+    }
+
+    .avatar img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top center;
+      border-radius: 50%;
     }
 
     .board-card .name { font-size: 1rem; font-weight: 700; margin-bottom: .3rem; }
@@ -859,27 +868,27 @@
 
     <div class="board-grid">
       <div class="board-card">
-        <div class="avatar">BN</div>
+        <div class="avatar"><img src="https://aiupperaustria.com/wp-content/uploads/2023/09/IMG_6781_1-scaled.jpg" alt="Bernhard Niedermayer" /></div>
         <div class="name">Bernhard Niedermayer</div>
         <div class="role">Obmann · Head of AI @ Cloudflight</div>
       </div>
       <div class="board-card">
-        <div class="avatar">MM</div>
+        <div class="avatar"><img src="https://aiupperaustria.com/wp-content/uploads/2025/11/SCCH_Markus_2023_8338_Portrait_753Px.jpg" alt="Markus Manz" /></div>
         <div class="name">Markus Manz</div>
         <div class="role">Obmann-Stellvertreter · CEO SCCH</div>
       </div>
       <div class="board-card">
-        <div class="avatar">GK</div>
+        <div class="avatar"><img src="https://aiupperaustria.com/wp-content/uploads/2023/09/IMG_6790-scaled.jpg" alt="Gerhard Kürner" /></div>
         <div class="name">Gerhard Kürner</div>
         <div class="role">Stellvertreter</div>
       </div>
       <div class="board-card">
-        <div class="avatar">FK</div>
+        <div class="avatar"><img src="https://aiupperaustria.com/wp-content/uploads/2023/09/IMG_6783-scaled.jpg" alt="Franziskos Kyriakopoulos" /></div>
         <div class="name">Franziskos Kyriakopoulos</div>
         <div class="role">Kassier</div>
       </div>
       <div class="board-card">
-        <div class="avatar">DB</div>
+        <div class="avatar"><img src="https://aiupperaustria.com/wp-content/uploads/2023/09/IMG_6786_2-scaled.jpg" alt="David Böhm" /></div>
         <div class="name">David Böhm</div>
         <div class="role">Schriftführer</div>
       </div>
